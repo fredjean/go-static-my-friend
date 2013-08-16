@@ -8,7 +8,9 @@ title: Go Static, My Friend
   </section>
 
   <section>
-    <img src="http://media.web.britannica.com/eb-media/73/78373-050-2D15D41C.jpg">
+    <figure>
+      <img src="http://media.web.britannica.com/eb-media/73/78373-050-2D15D41C.jpg">
+      <figcaption>Source: <a href="http://media.web.britannica.com/eb-media/73/78373-050-2D15D41C.jpg">Encyclopedia Britannica</a></figcaption>
   </section>
 
   <section>
@@ -21,6 +23,10 @@ title: Go Static, My Friend
 
   <section>
     <h1>Database</h1>
+  </section>
+
+  <section>
+    <h1>Datastore</h1>
   </section>
 
   <section>
@@ -48,4 +54,101 @@ title: Go Static, My Friend
     <br>
     <blockquote class="fragment">That last bit is important...</blockquote>
   </section>
+
+  <section>
+    <h2>Structure</h2>
+    <pre><code data-trim>
+.
+├── Gemfile
+├── Gemfile.lock
+├── config.rb
+└── source
+    </code></pre>
+  </section>
+
+  <section>
+    <h2>Structure</h2>
+    <pre><code data-trim>
+.
+├── Gemfile
+├── Gemfile.lock
+├── build
+├── config.rb
+└── source
+    </code></pre>
+  </section>
+
+  <section>
+    <h2>Source Structure</h2>
+    <pre><code data-trim>
+source
+├── images
+├── index.html.erb
+├── js
+├── layouts
+├── lib
+├── plugin
+└── stylesheets
+    </code></pre>
+  </section>
+
+  <section>
+    <h2>Templating Options</h2>
+    <ul>
+      <li>ERb</li>
+      <li>HAML</li>
+      <li>Markdown</li>
+      <li>Others</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Templating Systems are Composable</h2>
+    <pre class="fragment">index.markdown.erb</pre>
+  </section>
+</section>
+
+<section>
+  <section>
+    <h2>DATA</h2>
+    <ol>
+      <li>Frontmatter</li>
+      <li>Local Data</li>
+    </ol>
+  </section>
+</section>
+
+<section>
+  <section>
+    <h1>Front matter</h1>
+  </section>
+  <section>
+    <pre><code data-trim>
+---
+title: Go Static Young Man!
+date: 2013-04-19 16:35 MDT
+tags:
+---
+
+There are many options available for blog posting. There are SaaS
+solutions where the blogging infrastructure is managed for you. There
+are a few self-hosted solution where you (or your organization) is
+    </code></pre>
+  </section>
+
+  <section>
+    <h2>Front Matter</h2>
+    <ul>
+      <li>Attached to the current page</li>
+      <li>Available through the <code>current_page.data</code> method</li>
+    </ul>
+  </section>
+  <section>
+    <pre><code data-trim>
+<article>
+  <h1><%%= current_page.data.title %></h1>
+  <%%= yield %>
+  <%%= partial :byline, locals: { article: current_article } %>
+</article>
+    </code></pre>
 </section>
