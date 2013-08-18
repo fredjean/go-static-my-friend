@@ -56,40 +56,13 @@ title: Go Static, My Friend
   </section>
 
   <section>
-    <h2>Structure</h2>
-    <pre><code data-trim>
-.
-├── Gemfile
-├── Gemfile.lock
-├── config.rb
-└── source
-    </code></pre>
-  </section>
-
-  <section>
-    <h2>Structure</h2>
-    <pre><code data-trim>
-.
-├── Gemfile
-├── Gemfile.lock
-├── build
-├── config.rb
-└── source
-    </code></pre>
-  </section>
-
-  <section>
-    <h2>Source Structure</h2>
-    <pre><code data-trim>
-source
-├── images
-├── index.html.erb
-├── js
-├── layouts
-├── lib
-├── plugin
-└── stylesheets
-    </code></pre>
+    <h2>View Layer</h2>
+    <ul>
+      <li>Templates</li>
+      <li>Layouts</li>
+      <li>Partials</li>
+      <li>View Helpers</li>
+    </ul>
   </section>
 
   <section>
@@ -106,34 +79,26 @@ source
     <h2>Templating Systems are Composable</h2>
     <pre class="fragment">index.markdown.erb</pre>
   </section>
-</section>
 
-<section>
   <section>
-    <h2>DATA</h2>
-    <ol>
+    <h2>Data Layer</h2>
+    <ul>
       <li>Frontmatter</li>
       <li>Local Data</li>
-    </ol>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Configuration Driven</h2>
+    <pre><code data-trim>
+config.rb
+    </code></pre>
   </section>
 </section>
 
 <section>
   <section>
     <h1>Front matter</h1>
-  </section>
-  <section>
-    <pre><code data-trim>
----
-title: Go Static Young Man!
-date: 2013-04-19 16:35 MDT
-tags:
----
-
-There are many options available for blog posting. There are SaaS
-solutions where the blogging infrastructure is managed for you. There
-are a few self-hosted solution where you (or your organization) is
-    </code></pre>
   </section>
 
   <section>
@@ -143,12 +108,110 @@ are a few self-hosted solution where you (or your organization) is
       <li>Available through the <code>current_page.data</code> method</li>
     </ul>
   </section>
+
+  <section>
+    <h2>YAML</h2>
+    <pre><code data-trim>
+---
+title: A Sample Team Page
+---
+    </code></pre>
+  </section>
+
+  <section>
+    <h2>JSON</h2>
+    <pre><code data-trim>
+;;;
+"title": "A Sample Team Page"
+;;;
+    </code></pre>
+  </section>
+
   <section>
     <pre><code data-trim>
+<h1><%%= current_page.data.title %></h1>
+    </code></pre>
+  </section>
+</section>
+
+<section>
+  <section>
+    <h1>Local Data</h1>
+  </section>
+
+  <section>
+    <h2>Local Data</h2>
+    <ul>
+      <li>JSON or YAML</li>
+      <li>Stored under <code>data</code></li>
+    </ul>
+  </section>
+
+  <section>
+    <h2><code>data/team.yml</code></h2>
+    <pre><code class="yaml">
+---
+-
+  slug: fred
+  name: Frederic Jean
+  title: Senior Bit Twiddler
+  bio: Something really clever goes here...
+    </code></pre>
+  </section>
+
+  <section>
+    <h2>Using local data in a page</h2>
+    <pre><code class="html" data-trim>
+<%% data.team.each do |member| %>
+   <%%= image_tag "team/#{member.slug}.png", width: '25%', height: '25%' %>
+  <h2><%%= link_to member.name, "/team/" + member.slug %></h2>
+<%% end %>
+    </code></pre>
+  </section>
+
+  <section>
+    <h2>Dynamic Pages</h2>
+    <pre><code class="ruby" data-trim>
+data.team.each do |member|
+  proxy "/team/#{member.slug}.html", "team/team.html",
+        locals: { member: member }, ignore: true
+end
+    </code></pre>
+  </section>
+
+  <section>
+    <h2>Data in Proxy Page</h2>
+    <pre><code data-trim>
 <article>
-  <h1><%%= current_page.data.title %></h1>
-  <%%= yield %>
-  <%%= partial :byline, locals: { article: current_article } %>
+  <h1><%%= member.name %> &mdash; <%%= member.title %></h1>
+  <%%= image_tag "team/#{member.slug}.png" %>
+  <%%= member.bio %>
+  <aside>
+    <%% if member[:twitter] %>
+       <%%= link_to "twitter", "http://twitter.com/#{member.twitter}" %>
+    <%% end %>
+
+    <%% if member[:github] %>
+       <%%= link_to "github", "https://github.com/#{member.github}" %>
+    <%% end %>
+  </aside>
 </article>
     </code></pre>
+  </section>
 </section>
+
+<section>
+  <section>
+    <h1>Publishing</h1>
+  </section>
+
+  <section>
+    <pre><code>
+$ middleman build
+    </code></pre>
+  </section>
+</section>
+
+  <section>
+    <h1>Wrapping Up</h1>
+  </section>
