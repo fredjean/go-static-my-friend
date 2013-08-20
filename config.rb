@@ -71,5 +71,5 @@ end
 
 activate :s3_sync do |s3_sync|
   s3_sync.bucket = 'go-static-my-friend.fredjean.net'
-  s3.region = 'us-west-1'
+  s3_sync.region = 'us-west-1'
 end
