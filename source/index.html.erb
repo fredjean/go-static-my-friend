@@ -199,6 +199,16 @@ end
 </article>
     </code></pre>
   </section>
+
+  <section>
+    <h2>Dynamic Pages</h2>
+    <pre><code class="ruby" data-trim>
+data.team.each do |member|
+  proxy "/team/#{member.slug}.html", "team/team.html",
+        locals: { member: member }, ignore: true
+end
+    </code></pre>
+  </section>
 </section>
 
 <section>
@@ -210,6 +220,10 @@ end
     <pre><code>
 $ middleman build
     </code></pre>
+  </section>
+
+  <section>
+    <h1>Extensions</h1>
   </section>
 
   <section>
@@ -280,6 +294,7 @@ middleman s3_sync
       <li>Bit Twiddler @ <a href="http://bounce.io">Bounce.io</a></li>
       <li><a href="mailto:fred@fredjean.net">fred@fredjean.net</a></li>
       <li><a href="mailto:fred@bounce.io">fred@bounce.io</a></li>
+      <li><a href="http://fredjean.net">http://fredjean.net</a></li>
       <li><a href="http://twitter.com/fredjean">@fredjean</a></li>
     </ul>
   </section>
