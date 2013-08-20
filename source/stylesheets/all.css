@@ -53,3 +53,8 @@ h1 {
     -webkit-transform: scale(1);
   }
 }
+
+.avatar {
+  float: left;
+  vertical-align: middle;
+}

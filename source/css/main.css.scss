@@ -1,2 +1,13 @@
 @import "reveal";
 @import "theme/solarized";
+
+.whoami {
+  .avatar {
+    float: left;
+    vertical-align: middle;
+  }
+
+  ul {
+    vertical-align: middle;
+  }
+}

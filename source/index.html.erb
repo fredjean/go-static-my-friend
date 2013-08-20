@@ -11,6 +11,7 @@ title: Go Static, My Friend
     <figure>
       <img src="http://media.web.britannica.com/eb-media/73/78373-050-2D15D41C.jpg">
       <figcaption>Source: <a href="http://media.web.britannica.com/eb-media/73/78373-050-2D15D41C.jpg">Encyclopedia Britannica</a></figcaption>
+    </figure>
   </section>
 
   <section>
@@ -210,8 +211,67 @@ end
 $ middleman build
     </code></pre>
   </section>
+
+  <section>
+    <h2>Configure S3 for Website Hosting</h2>
+    <%= image_tag 'S3_Management_Console.png' %>
+  </section>
+
+  <section>
+    <h2>Configure Middleman S3 Sync</h2>
+    <pre><code data-trim>
+activate :s3_sync do |sync|
+  sync.bucket = 'go-static.fredjean.net'
+  sync.region = 'us-west-1'
+end
+    </code></pre>
+  </section>
+
+  <section>
+    <h2>Push</h2>
+    <pre><code data-trim>
+middleman s3_sync
+    </code></pre>
+  </section>
+
+  <section>
+    <h2>Setup DNS</h2>
+    <ul>
+      <li>ALIAS for "naked domains"</li>
+      <li>CNAME is sufficient for sub-domains</li>
+      <li class="fragment">Amazon Route 53 works best</li>
+      <li class="fragment">DNSimple works pretty good though</li>
+    </ul>
+  </section>
 </section>
 
+<section>
   <section>
     <h1>Wrapping Up</h1>
   </section>
+
+  <section>
+    <ul>
+      <li class="fragment">Building a data driven site</li>
+      <li class="fragment">using Middleman</li>
+      <li class="fragment">and publishing it on S3</li>
+    </ul>
+  </section>
+
+  <section>
+    <figure>
+      <img src="http://media.web.britannica.com/eb-media/73/78373-050-2D15D41C.jpg">
+      <figcaption>Source: <a href="http://media.web.britannica.com/eb-media/73/78373-050-2D15D41C.jpg">Encyclopedia Britannica</a></figcaption>
+    </figure>
+  </section>
+
+  <section class="whoami">
+    <%= image_tag 'avatar.png', class: 'avatar' %>
+    <ul>
+      <li>Frederic Jean</li>
+      <li>Bit Twiddler @ <a href="http://bounce.io">Bounce.io</a></li>
+      <li><a href="mailto:fred@fredjean.net">fred@fredjean.net</a></li>
+      <li><a href="http://twitter.com/fredjean">@fredjean</a></li>
+    </ul>
+  </section>
+</section>
