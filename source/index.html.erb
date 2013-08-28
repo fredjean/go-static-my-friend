@@ -7,7 +7,7 @@ title: Go Static, My Friend
     <h1>In the beginning...</h1>
   </section>
 
-  <section fullscreen-img="http://media.web.britannica.com/eb-media/73/78373-050-2D15D41C.jpg">
+  <section fullscreen-img="/img/tim.jpg">
   </section>
 
   <section>
@@ -31,12 +31,20 @@ title: Go Static, My Friend
     <h1>Datastore</h1>
   </section>
 
+  <section fullscreen-img="/img/scaling.png">
+    <h1>Scaling is Hard</h1>
+  </section>
+
+  <section>
+    <h1>Generate Static Content</h1>
+  </section>
+
   <section>
     <h1>Data<span class='strikethrough'>base</span></h1>
   </section>
 
-  <section>
-    <h1>Static Web Site</h1>
+  <section fullscreen-img="/img/cloud.jpg">
+    <h1>Deploy to the Cloud</h1>
   </section>
 
   <section>
@@ -83,11 +91,7 @@ title: Go Static, My Friend
   </section>
 
   <section>
-    <h2>Data Layer</h2>
-    <ul>
-      <li>Frontmatter</li>
-      <li>Local Data</li>
-    </ul>
+    <h1>Data Layer</h1>
   </section>
 
   <section>
@@ -146,6 +150,7 @@ title: A Sample Team Page
     <ul>
       <li>JSON or YAML</li>
       <li>Stored under <code>data</code></li>
+      <li>Available via the <code>data</code> helper</li>
     </ul>
   </section>
 
@@ -214,7 +219,7 @@ end
 
 <section>
   <section>
-    <h1>Publishing</h1>
+    <h1>Generating Static Content</h1>
   </section>
 
   <section>
@@ -228,8 +233,37 @@ $ middleman build
   </section>
 
   <section>
-    <h2>Configure S3 for Website Hosting</h2>
-    <%= image_tag 'S3_Management_Console.png' %>
+    <h2>Page Load Optimisation</h2>
+    <ul>
+      <li>minify_css</li>
+      <li>minify_javascript</li>
+      <li>smusher</li>
+      <li>minify_html</li>
+      <li>gzip</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Assets Management</h2>
+    <ul>
+      <li>relative_assets</li>
+      <li>asset_hash</li>
+    </ul>
+  </section>
+
+  <section>
+    <h1>$$$</h1>
+  </section>
+</section>
+
+<section>
+  <section>
+    <h1>Publishing</h1>
+  </section>
+
+  <section fullscreen-img="/img/cloud.jpg">
+    <h1>middleman-s3_sync</h1>
+    <blockquote>The gem that tries really hard not to push files to S3</blockquote>
   </section>
 
   <section>
@@ -247,6 +281,7 @@ end
     <ul>
       <li>Store in <code>config.rb</code></li>
       <li>Store in environment</li>
+      <li>Store in <code>.s3_sync</code></li>
     </ul>
   </section>
 
@@ -255,6 +290,11 @@ end
     <pre><code data-trim>
 middleman s3_sync
     </code></pre>
+  </section>
+
+  <section>
+    <h2>Configure S3 for Website Hosting</h2>
+    <%= image_tag 'S3_Management_Console.png' %>
   </section>
 
   <section>
@@ -281,7 +321,7 @@ middleman s3_sync
     </ul>
   </section>
 
-  <section fullscreen-img="http://media.web.britannica.com/eb-media/73/78373-050-2D15D41C.jpg">
+  <section fullscreen-img="/img/tim.jpg">
   </section>
 
   <section class="whoami">
@@ -295,4 +335,13 @@ middleman s3_sync
       <li><a href="http://twitter.com/fredjean">@fredjean</a></li>
     </ul>
   </section>
+</section>
+
+<section>
+  <h2>Attributions</h2>
+  <ul>
+    <li><a href="http://en.wikipedia.org/wiki/Trojan_Room_coffee_pot">Trojan Room Coffee Pot</a></li>
+    <li><a href="https://dl.dropboxusercontent.com/u/2273146/my-old-digs.png">Obama Campaign Architecture</a></li>
+    <li><a href="http://www.flickr.com/photos/nirak/644337888/sizes/o/in/photolist-YWoML-YWpcW-YWuEd-24QLTr-25dtyc-2pDo5X-2qvbyW-2tUPjg-2TWHMM-31mq86-34vAHA-35YkUG-3pU5hg-4nvqBz-4nXfwv-4nXkbg-4o2qJ5-4orqLq-4qe8Ao-4PVqwm-4XCXJz-58Tkmt-5auBeF-5bKQL2-5c4Lno-5c6SxP-5dCJiB-5gvxay-5qFgPP-5s6qhN-5BW9sA-5D6LTr-5Qh5eM-5REctS-6f8uhX-6fRpAb-6fTmk7-6k1dF4-6umxkS-6F4xaN-6PKM22-74EY4d-75N9St-77DJmC-7oFU8a-7oFYoX-7oFYrc-7u8sVQ-7uRQKg-7wyqvS-9zbjDz/">Clouds</a> by <a href="http://www.flickr.com/photos/nirak/">karindalziel</a></li>
+  </ul>
 </section>
