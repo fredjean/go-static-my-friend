@@ -8,5 +8,30 @@
 
   ul {
     vertical-align: middle;
+    li {
+      font-size: 1.3em;
+      text-decoration: none;
+      list-style-type: none;
+    }
+  }
+}
+
+.reveal {
+  h1 {
+    font-size: 6.5em;
+  }
+
+  h2 {
+    font-size: 5.12em;
+  }
+
+  pre.big, blockquote, li {
+    font-size: 2em;
+    line-height: 150%;
+  }
+
+  pre.medium {
+    font-size: 1.75em;
+    line-height: 125%;
   }
 }

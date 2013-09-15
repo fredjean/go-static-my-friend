@@ -47,8 +47,7 @@ title: Go Static, My Friend
     <h1>Deploy to the Cloud</h1>
   </section>
 
-  <section>
-    <%= image_tag '/images/middleman.png' %>
+  <section data-background="/img/rays.png">
   </section>
 </section>
 
@@ -87,7 +86,7 @@ title: Go Static, My Friend
 
   <section>
     <h2>Templating Systems are Composable</h2>
-    <pre class="fragment">index.markdown.erb</pre>
+    <pre class="fragment big"><code>index.markdown.erb</code></pre>
   </section>
 
   <section>
@@ -96,7 +95,7 @@ title: Go Static, My Friend
 
   <section>
     <h2>Configuration Driven</h2>
-    <pre><code data-trim>
+    <pre class="big"><code data-trim>
 config.rb
     </code></pre>
   </section>
@@ -117,7 +116,7 @@ config.rb
 
   <section>
     <h2>YAML</h2>
-    <pre><code data-trim>
+    <pre class="big"><code data-trim>
 ---
 title: A Sample Team Page
 ---
@@ -126,7 +125,7 @@ title: A Sample Team Page
 
   <section>
     <h2>JSON</h2>
-    <pre><code data-trim>
+    <pre class="big"><code data-trim>
 ;;;
 "title": "A Sample Team Page"
 ;;;
@@ -134,7 +133,7 @@ title: A Sample Team Page
   </section>
 
   <section>
-    <pre><code data-trim>
+    <pre class="medium"><code data-trim>
 <h1><%%= current_page.data.title %></h1>
     </code></pre>
   </section>
@@ -223,7 +222,7 @@ end
   </section>
 
   <section>
-    <pre><code>
+    <pre class="big"><code>
 $ middleman build
     </code></pre>
   </section>
@@ -267,8 +266,8 @@ $ middleman build
   </section>
 
   <section>
-    <h2>Configure Middleman S3 Sync</h2>
-    <pre><code data-trim>
+    <h2>Configure S3 Sync</h2>
+    <pre class="medium"><code data-trim>
 activate :s3_sync do |sync|
   sync.bucket = 'go-static.fredjean.net'
   sync.region = 'us-west-1'
@@ -326,9 +325,9 @@ $  middleman s3_sync
 
   <section>
     <ul>
-      <li class="fragment">Building a data driven site</li>
+      <li class="fragment">Built a data driven site</li>
       <li class="fragment">using Middleman</li>
-      <li class="fragment">and publishing it on S3</li>
+      <li class="fragment">and published it on S3</li>
     </ul>
   </section>
 
